@@ -35,5 +35,3 @@ db.run("Create table if not exists PLANETES (id INTEGER PRIMARY KEY, nom varchar
 // db.run("Insert into PLANETES (nom, image) values (?, ?)", ["Terre", "https://upload.wikimedia.org/wikipedia/commons/d/d9/Earth_by_the_EPIC_Team_on_21_April_2018.png"])
 // db.run("Insert into PLANETES (nom, image) values (?, ?)", ["Mercure", "https://upload.wikimedia.org/wikipedia/commons/3/30/Mercury_in_color_-_Prockter07_centered.jpg"])
 // db.run("Insert into PLANETES (nom, image) values (?, ?)", ["Venus", "https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg"])
-
-
