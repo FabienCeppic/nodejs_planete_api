@@ -1,6 +1,26 @@
+const express = require("express")
 const sqlite3 = require("sqlite3")
+
+const app = express()
+const port = 7500
 const dbname = "univers.db"
 
+
+app.listen(port, () => {
+  console.log(`Serveur express en route ${port}`)
+})
+
+app.get('/', (req, res) => {
+  res.send("Bienvenue dans l'api REST des planètes")
+})
+
+app.get('/planetes', (req, res) => {
+  res.header("Content-type", "application/json")
+  db.all("Select * From PLANETES", (err, data) => {
+    if (err) throw err
+    res.send(JSON.stringify(data))
+  })
+})
 
 let db = new sqlite3.Database(dbname, err => {
   if (err)
@@ -16,7 +36,4 @@ db.run("Create table if not exists PLANETES (id INTEGER PRIMARY KEY, nom varchar
 // db.run("Insert into PLANETES (nom, image) values (?, ?)", ["Mercure", "https://upload.wikimedia.org/wikipedia/commons/3/30/Mercury_in_color_-_Prockter07_centered.jpg"])
 // db.run("Insert into PLANETES (nom, image) values (?, ?)", ["Venus", "https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg"])
 
-db.all("Select * From PLANETES", (err, data) => {
-  if (err) throw err
-  console.log(data)
-})
+
