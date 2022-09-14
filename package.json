@@ -1,0 +1,23 @@
+{
+  "name": "nodejs_planete_api",
+  "version": "1.0.0",
+  "description": "**But du projet** : Créer une **api rest** avec le framework **express** , **node.js** et **sqlite**.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FabienCeppic/nodejs_planete_api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FabienCeppic/nodejs_planete_api/issues"
+  },
+  "homepage": "https://github.com/FabienCeppic/nodejs_planete_api#readme",
+  "dependencies": {
+    "sqlite3": "^5.1.0"
+  }
+}
