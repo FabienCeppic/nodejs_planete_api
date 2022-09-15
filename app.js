@@ -29,3 +29,11 @@ app.get('/planetes', (req, res) => {
     res.send(JSON.stringify(data))
   })
 })
+
+app.get('/planete/:planeteId', (req, res) => {
+  res.header("Content-type", "application/json")
+  db.all(`Select * From PLANETES Where id = ${req.params.planeteId}`, (err, data) => {
+    if (err) throw err
+    res.send(JSON.stringify(data))
+  })
+})
