@@ -1,9 +1,12 @@
 const express = require("express")
+const cors = require("cors")
 const sqlite3 = require("sqlite3")
 
 const app = express()
 const port = 7500
 const dbname = "univers.db"
+
+app.use(cors())
 
 let db = new sqlite3.Database(dbname, err => {
   if (err)
